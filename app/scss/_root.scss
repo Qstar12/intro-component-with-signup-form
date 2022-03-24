@@ -1,0 +1,37 @@
+:root {
+  // Colors
+
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --darkBlue: hsl(249, 10%, 26%);
+  --grayishBlue: hsl(246, 25%, 77%);
+
+  // Font
+
+  --ff-primary: "Poppins", sans-serif;
+
+  // Font Sizes
+  --fs-base: 1rem;
+  --fs-sm: 0.6875rem;
+  --fs-md: 0.875rem;
+  --fs-lg: 0.9375rem;
+  --fs-xlg: 1.75rem;
+
+  // Line Height
+  --LH-base: 1.625rem;
+  --LH-sm: 1.31rem;
+  --LH-md: 2.25rem;
+
+
+  // Spacing & Sizing
+  --Header-mb: 1rem;
+  --snippet-mb: 4rem;
+  --cta-mb: 1.5rem;
+  --spacer-top: 5.5rem;
+  --spacer-bottom: 1rem;
+
+  // CTA padding
+  --pd-cta: 1.125rem 4.125rem 1.125rem 4.125rem;
+
+}
