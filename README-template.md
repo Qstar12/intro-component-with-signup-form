@@ -32,20 +32,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./images/inrto-component.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/intro-rJGSVL5f9)
+- Live Site URL: [Add live site URL here](https://introqstar.netlify.app/?username=&username2=&email=&password=)
 
 ## My process
 
@@ -56,39 +48,82 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned a lot about color contrast and accessibility
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+
+```//Condition for errors
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    //The message
+    errorDisplay.innertext = message;
+    inputControl.classList.add('error');
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errordisplay = inputControl.querySelector('.error');
+
+    //Remove the error you message and class!!!!!
+    errordisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
 }
+const isValidEmail = email => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
+const validateInputs = () => {
+    const usernameValue = username.value.trim();
+    const username2Value = username2.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(usernameValue === '') {
+        setError(username, 'First name cannot be empty');
+    }else{
+        setSuccess(username);
+    }
+
+    if(username2Value === '') {
+        setError(username2, 'Last name cannot be empty');
+    }else {
+        setSuccess(username2);
+    }
+
+    if(emailValue === '') {
+        setError(email, 'Please provide an email');
+    }else if(!isValidEmail(emailValue)) {
+        setError(email, 'Looks like this is not an email')
+    }else {
+        setSuccess(email);
+    }
+
+    if(passwordValue === '') {
+        setError(password, 'Password cannot be empty');
+    }else if (passwordValue.length < 8) {
+        setError(password, 'Password must be at least 8 chracters.')
+    }else {
+        setSuccess(password);
+    }
+    
+};
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I want to collab on bigger projects if you would like to collab reach out.🦾 
 
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
@@ -97,18 +132,15 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Amario Jones](https://introqstar.netlify.app/?username=&username2=&email=&password=)
+- Frontend Mentor - [@Qstar12](https://www.frontendmentor.io/profile/Qstar12)
+- Twitter - [@AmarioJones1](https://twitter.com/AmarioJones1)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks for viewing!
